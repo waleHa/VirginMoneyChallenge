@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="StyleProgressBar" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateDrawable">@drawable/progress_drawable</item>
+        <item name="android:indeterminateOnly">true</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+    </style>
+</resources>

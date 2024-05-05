@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/nav_people"
+    android:enabled="true"
+    android:icon="@drawable/icon_people"
+    android:title="@string/menu_people"
+    />
+    <item
+        android:id="@+id/nav_rooms"
+        android:enabled="true"
+        android:icon="@drawable/icon_room"
+        android:title="@string/menu_rooms"
+        />
+</menu>
