@@ -8,7 +8,5 @@ import javax.inject.Inject
 
 class PeopleRepository @Inject constructor(private val peopleApiEndPoints: PeopleApiEndPoints) {
     suspend fun getPeopleListFromRemoteDataSource() =
-        peopleApiEndPoints.getPeopleListFromRemoteDataSource().map {
-            it.toDTO()
-        }
+        peopleApiEndPoints.getPeopleListFromRemoteDataSource()
 }

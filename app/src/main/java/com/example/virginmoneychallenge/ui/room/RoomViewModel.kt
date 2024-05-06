@@ -13,25 +13,29 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class RoomViewModel @Inject constructor(private val repository: RoomRepository) : ViewModel(){
-    private var _roomList = MutableLiveData<List<RoomModel>>()
-    val roomList : LiveData<List<RoomModel>> = _roomList
+class RoomViewModel @Inject constructor(private val repository: RoomRepository) : ViewModel() {
+    private var _roomListSuccess = MutableLiveData<List<RoomModel>>()
+    val roomListSuccess: LiveData<List<RoomModel>> = _roomListSuccess
     private val _loading = MutableLiveData<Boolean>(true)
-    val loading : LiveData<Boolean> = _loading
+    val loading: LiveData<Boolean> = _loading
     val TAG = "TAG: RoomViewModel"
+    val _roomListError = MutableLiveData<String>()
+    val roomListError: LiveData<String> = _roomListError
+
     init {
         getRoomList()
     }
-    fun getRoomList(){
+
+    fun getRoomList() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                Log.i(TAG,"getRoomList")
-                _roomList.postValue(repository.getRoomsFromRemoteDataSource())
+                Log.i(TAG, "getRoomList")
+                _roomListSuccess.postValue(repository.getRoomsFromRemoteDataSource().body())
+            } catch (e: Exception) {
+                _roomListError.postValue(e.localizedMessage)
+            } finally {
                 _loading.postValue(false)
-            }catch (e:Exception){
-                Log.e(TAG,e.localizedMessage.toString())
             }
         }
     }
-
 }

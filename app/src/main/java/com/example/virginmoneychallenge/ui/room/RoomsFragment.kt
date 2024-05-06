@@ -10,7 +10,6 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.virginmoneychallenge.R
 import com.example.virginmoneychallenge.databinding.FragmentRoomsBinding
-import dagger.hilt.EntryPoint
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,7 +38,7 @@ class RoomsFragment : Fragment() {
     }
 
     private fun initiateObservables(adapter: RoomAdapter) {
-        viewModel.roomList.observe(viewLifecycleOwner){
+        viewModel.roomListSuccess.observe(viewLifecycleOwner){
             adapter.submitList(it)
         }
 
