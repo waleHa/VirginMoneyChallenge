@@ -23,7 +23,7 @@ class PeopleViewModel @Inject constructor(private val peopleRepository: PeopleRe
         getPeople()
     }
     private fun getPeople(){
-        Log.i(TAG, "getPeople Started")
+//        Log.i(TAG, "getPeople Started")
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 _people.postValue(peopleRepository.getPeopleListFromRemoteDataSource())

@@ -1,6 +1,7 @@
 package com.example.virginmoneychallenge.data.network
 
 import com.example.virginmoneychallenge.core.Constant
+import com.example.virginmoneychallenge.data.network.room.RoomApiEndPoint
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -44,4 +45,7 @@ object RetrofitInstance {
     @Singleton
     fun providePeopleApi(retrofit: Retrofit) = retrofit.create(PeopleApiEndPoints::class.java)
 
+    @Provides
+    @Singleton
+    fun provideRoomApi(retrofit: Retrofit) = retrofit.create(RoomApiEndPoint::class.java)
 }
