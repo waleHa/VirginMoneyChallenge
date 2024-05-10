@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setFragment(PeopleFragment())
+//        setFragment(PeopleFragment())
 
         val navHostFragment = supportFragmentManager
             .findFragmentById(binding.fragmentContainer.id) as NavHostFragment
@@ -52,12 +52,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+}
 
-    private fun setFragment(fragment: Fragment) {
+//    private fun setFragment(fragment: Fragment) {
 //        supportFragmentManager.beginTransaction()
 //            .replace(binding.fragmentContainer.id, fragment)
 //            .commit()
 //        navController.navigate(PeopleFragment().id)
-
-    }
-}
+//    }
