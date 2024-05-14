@@ -1,6 +1,7 @@
-package com.example.virginmoneychallenge.data.network
+package com.example.virginmoneychallenge.data.di
 
 import com.example.virginmoneychallenge.core.Constant
+import com.example.virginmoneychallenge.data.network.PeopleApiEndPoints
 import com.example.virginmoneychallenge.data.network.room.RoomApiEndPoint
 import dagger.Module
 import dagger.Provides

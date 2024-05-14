@@ -2,6 +2,7 @@ package com.example.virginmoneychallenge.ui
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -24,12 +25,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        setFragment(PeopleFragment())
 
         val navHostFragment = supportFragmentManager
             .findFragmentById(binding.fragmentContainer.id) as NavHostFragment
         val navController = navHostFragment.navController
 
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.nav_people_detailed) {
+                binding.bottomNavigation.visibility = View.VISIBLE
+            } else {
+                binding.bottomNavigation.visibility = View.GONE
+            }
+        }
 
         binding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
@@ -54,9 +61,3 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-//    private fun setFragment(fragment: Fragment) {
-//        supportFragmentManager.beginTransaction()
-//            .replace(binding.fragmentContainer.id, fragment)
-//            .commit()
-//        navController.navigate(PeopleFragment().id)
-//    }

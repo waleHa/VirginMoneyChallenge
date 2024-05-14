@@ -7,14 +7,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.virginmoneychallenge.data.dto.PeopleDTO
 import com.example.virginmoneychallenge.domain.model.people.toDTO
-import com.example.virginmoneychallenge.data.repository.people.PeopleRepositoryImp
+import com.example.virginmoneychallenge.domain.repository.people.PeopleRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class PeopleViewModel @Inject constructor(private val peopleRepositoryImp: PeopleRepositoryImp) :
+class PeopleViewModel @Inject constructor(private val peopleRepositoryImp: PeopleRepository) :
     ViewModel() {
     private var _people = MutableLiveData<List<PeopleDTO>>()
     val people: LiveData<List<PeopleDTO>> = _people
