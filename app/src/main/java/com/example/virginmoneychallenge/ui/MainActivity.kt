@@ -32,9 +32,9 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.nav_people_detailed) {
-                binding.bottomNavigation.visibility = View.VISIBLE
-            } else {
                 binding.bottomNavigation.visibility = View.GONE
+            } else {
+                binding.bottomNavigation.visibility = View.VISIBLE
             }
         }
 

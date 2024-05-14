@@ -1,8 +1,7 @@
 package com.example.virginmoneychallenge.data.di
 
 import com.example.virginmoneychallenge.core.Constant
-import com.example.virginmoneychallenge.data.network.PeopleApiEndPoints
-import com.example.virginmoneychallenge.data.network.room.RoomApiEndPoint
+import com.example.virginmoneychallenge.data.network.ApiEndPoints
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,9 +12,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-@InstallIn(SingletonComponent::class)
 @Module
-object VirginModule {
+@InstallIn(SingletonComponent::class)
+object NetworkModule {
     @Provides
     @Singleton
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
@@ -44,9 +43,5 @@ object VirginModule {
 
     @Provides
     @Singleton
-    fun providePeopleApi(retrofit: Retrofit) = retrofit.create(PeopleApiEndPoints::class.java)
-
-    @Provides
-    @Singleton
-    fun provideRoomApi(retrofit: Retrofit) = retrofit.create(RoomApiEndPoint::class.java)
+    fun provideApi(retrofit: Retrofit): ApiEndPoints = retrofit.create(ApiEndPoints::class.java)
 }
