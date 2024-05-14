@@ -1,7 +1,7 @@
 package com.example.virginmoneychallenge.data.network
 
 import com.example.virginmoneychallenge.core.Constant
-import com.example.virginmoneychallenge.domain.people.model.PeopleModelItem
+import com.example.virginmoneychallenge.domain.model.people.PeopleModelItem
 import retrofit2.Response
 import retrofit2.http.GET
 

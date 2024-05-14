@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.virginmoneychallenge.R
 import com.example.virginmoneychallenge.databinding.ItemPeopleBinding
-import com.example.virginmoneychallenge.domain.people.model.PeopleDTO
+import com.example.virginmoneychallenge.data.dto.PeopleDTO
 
 class PeopleAdapter(private val onPeopleItemClicked: (PeopleDTO) -> Unit) :
     ListAdapter<PeopleDTO, PeopleAdapter.PeopleViewHolder>(DiffCallBack) {

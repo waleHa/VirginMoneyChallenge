@@ -1,4 +1,4 @@
-package com.example.virginmoneychallenge.domain.people.model
+package com.example.virginmoneychallenge.data.dto
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

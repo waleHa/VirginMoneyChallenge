@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.virginmoneychallenge.R
 import com.example.virginmoneychallenge.core.Constant.PEOPLE_DTO_PARCELIZED_KEY
 import com.example.virginmoneychallenge.databinding.FragmentPeopleBinding
-import com.example.virginmoneychallenge.domain.people.model.PeopleDTO
+import com.example.virginmoneychallenge.data.dto.PeopleDTO
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

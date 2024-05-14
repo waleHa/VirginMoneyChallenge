@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.virginmoneychallenge.R
 import com.example.virginmoneychallenge.databinding.ItemRoomBinding
-import com.example.virginmoneychallenge.domain.rooms.model.RoomModel
+import com.example.virginmoneychallenge.domain.model.room.RoomModel
 
 class RoomAdapter : ListAdapter<RoomModel, RoomAdapter.RoomViewHolder>(DiffCallBack) {
 

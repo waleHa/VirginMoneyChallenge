@@ -5,15 +5,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.virginmoneychallenge.domain.rooms.model.RoomModel
-import com.example.virginmoneychallenge.domain.rooms.repository.RoomRepository
+import com.example.virginmoneychallenge.domain.model.room.RoomModel
+import com.example.virginmoneychallenge.data.repository.room.RoomRepositoryImp
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class RoomViewModel @Inject constructor(private val repository: RoomRepository) : ViewModel() {
+class RoomViewModel @Inject constructor(private val repository: RoomRepositoryImp) : ViewModel() {
     private var _roomListSuccess = MutableLiveData<List<RoomModel>>()
     val roomListSuccess: LiveData<List<RoomModel>> = _roomListSuccess
     private val _loading = MutableLiveData<Boolean>(true)

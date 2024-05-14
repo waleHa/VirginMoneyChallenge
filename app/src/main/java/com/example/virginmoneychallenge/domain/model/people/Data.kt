@@ -1,4 +1,4 @@
-package com.example.virginmoneychallenge.domain.people.model
+package com.example.virginmoneychallenge.domain.model.people
 
 
 import com.google.gson.annotations.SerializedName

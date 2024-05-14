@@ -6,13 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.virginmoneychallenge.R
 import com.example.virginmoneychallenge.core.Constant.PEOPLE_DTO_PARCELIZED_KEY
 import com.example.virginmoneychallenge.databinding.FragmentDetailedPeopleBinding
-import com.example.virginmoneychallenge.domain.people.model.PeopleDTO
+import com.example.virginmoneychallenge.data.dto.PeopleDTO
 
 
 class DetailedPeopleFragment : Fragment() {

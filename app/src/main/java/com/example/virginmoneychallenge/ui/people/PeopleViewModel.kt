@@ -5,16 +5,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.virginmoneychallenge.domain.people.model.PeopleDTO
-import com.example.virginmoneychallenge.domain.people.model.toDTO
-import com.example.virginmoneychallenge.domain.people.repository.PeopleRepository
+import com.example.virginmoneychallenge.data.dto.PeopleDTO
+import com.example.virginmoneychallenge.domain.model.people.toDTO
+import com.example.virginmoneychallenge.data.repository.people.PeopleRepositoryImp
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class PeopleViewModel @Inject constructor(private val peopleRepository: PeopleRepository) :
+class PeopleViewModel @Inject constructor(private val peopleRepositoryImp: PeopleRepositoryImp) :
     ViewModel() {
     private var _people = MutableLiveData<List<PeopleDTO>>()
     val people: LiveData<List<PeopleDTO>> = _people
@@ -30,7 +30,7 @@ class PeopleViewModel @Inject constructor(private val peopleRepository: PeopleRe
 //        Log.i(TAG, "getPeople Started")
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                _people.postValue(peopleRepository.getPeopleListFromRemoteDataSource().body()?.map {
+                _people.postValue(peopleRepositoryImp.getPeopleListFromRemoteDataSource().body()?.map {
                     it.toDTO()
                 }
                 )

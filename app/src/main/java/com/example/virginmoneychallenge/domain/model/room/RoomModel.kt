@@ -1,4 +1,4 @@
-package com.example.virginmoneychallenge.domain.rooms.model
+package com.example.virginmoneychallenge.domain.model.room
 
 
 import com.google.gson.annotations.SerializedName
